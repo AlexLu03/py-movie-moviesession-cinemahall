@@ -17,14 +17,14 @@ def get_movies(
     return movies.distinct()
 
 
-def get_movie_by_id(movie_id) -> Any:
+def get_movie_by_id(movie_id: int) -> Any:
     movie = Movie.objects.get(id=movie_id)
     return movie
 
 
 def create_movie(
-    movie_title,
-    movie_description,
+    movie_title: str,
+    movie_description: str,
     genres_ids=None,
     actors_ids=None,
 ) -> Any:
