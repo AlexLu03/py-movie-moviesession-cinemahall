@@ -1,14 +1,16 @@
 from db.models import CinemaHall
+from typing import Any
 
 
-def get_cinema_halls():
+def get_cinema_halls() -> Any:
     return CinemaHall.objects.all()
+
 
 def create_cinema_hall(
         hall_name,
         hall_rows,
         hall_seats_in_row
-):
+) -> Any:
     new_hall = CinemaHall.objects.create(
         name=hall_name,
         rows=hall_rows,

@@ -1,7 +1,11 @@
 from db.models import Movie
+from typing import Any
 
 
-def get_movies(genres_ids=None, actors_ids=None):
+def get_movies(
+        genres_ids=None,
+        actors_ids=None
+) -> Any:
     movies = Movie.objects.all()
 
     if genres_ids:
@@ -13,7 +17,7 @@ def get_movies(genres_ids=None, actors_ids=None):
     return movies.distinct()
 
 
-def get_movie_by_id(movie_id):
+def get_movie_by_id(movie_id) -> Any:
     movie = Movie.objects.get(id=movie_id)
     return movie
 
@@ -23,7 +27,7 @@ def create_movie(
     movie_description,
     genres_ids=None,
     actors_ids=None,
-):
+) -> Any:
     new_movie = Movie.objects.create(
         title=movie_title,
         description=movie_description,
