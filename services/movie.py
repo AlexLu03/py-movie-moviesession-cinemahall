@@ -4,7 +4,7 @@ from typing import Any
 
 def get_movies(
         genres_ids: any = None,
-        actors_ids: any =None
+        actors_ids: any = None
 ) -> Any:
     movies = Movie.objects.all()
 

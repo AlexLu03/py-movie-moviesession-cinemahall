@@ -1,6 +1,7 @@
 from db.models import MovieSession
 from typing import Any
 
+
 def create_movie_session(
         movie_show_time: Any,
         movie_id: int,
