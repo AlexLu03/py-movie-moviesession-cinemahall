@@ -3,8 +3,8 @@ from typing import Any
 
 
 def get_movies(
-        genres_ids=None,
-        actors_ids=None
+        genres_ids: any = None,
+        actors_ids: any =None
 ) -> Any:
     movies = Movie.objects.all()
 
@@ -25,8 +25,8 @@ def get_movie_by_id(movie_id: int) -> Any:
 def create_movie(
     movie_title: str,
     movie_description: str,
-    genres_ids=None,
-    actors_ids=None,
+        genres_ids: any = None,
+        actors_ids: any = None
 ) -> Any:
     new_movie = Movie.objects.create(
         title=movie_title,

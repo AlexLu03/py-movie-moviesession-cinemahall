@@ -15,7 +15,7 @@ def create_movie_session(
     return new_session
 
 
-def get_movies_sessions(session_date=None) -> Any:
+def get_movies_sessions(session_date: any =None) -> Any:
     if session_date:
         return MovieSession.objects.filter(show_time__date=session_date)
     return MovieSession.objects.all()
@@ -29,9 +29,9 @@ def get_movie_session_by_id(
 
 def update_movie_session(
         session_id: int,
-        show_time=None,
-        movie_id=None,
-        cinema_hall_id=None
+        show_time: any =None,
+        movie_id: any =None,
+        cinema_hall_id: any =None
 ) -> Any:
     session = MovieSession.objects.get(id=session_id)
 
