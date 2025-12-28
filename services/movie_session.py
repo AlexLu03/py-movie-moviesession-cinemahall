@@ -1,9 +1,8 @@
 from db.models import MovieSession
 from typing import Any
 
-
 def create_movie_session(
-        movie_show_time: float,
+        movie_show_time: Any,
         movie_id: int,
         cinema_hall_id: int
 ) -> Any:
@@ -15,7 +14,7 @@ def create_movie_session(
     return new_session
 
 
-def get_movies_sessions(session_date: any =None) -> Any:
+def get_movies_sessions(session_date: Any = None) -> Any:
     if session_date:
         return MovieSession.objects.filter(show_time__date=session_date)
     return MovieSession.objects.all()
@@ -29,9 +28,9 @@ def get_movie_session_by_id(
 
 def update_movie_session(
         session_id: int,
-        show_time: any =None,
-        movie_id: any =None,
-        cinema_hall_id: any =None
+        show_time: Any = None,
+        movie_id: Any = None,
+        cinema_hall_id: Any = None
 ) -> Any:
     session = MovieSession.objects.get(id=session_id)
 
@@ -48,5 +47,5 @@ def update_movie_session(
 
 def delete_movie_session_by_id(
         session_id: int
-):
+) -> None:
     MovieSession.objects.filter(id=session_id).delete()
